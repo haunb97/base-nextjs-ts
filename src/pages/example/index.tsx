@@ -1,5 +1,6 @@
-import React from "react";
-import Title from "./_components/title";
+import React from 'react';
+
+import Title from './_components/title';
 
 export default function Example() {
   return (

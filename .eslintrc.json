@@ -1,3 +1,101 @@
 {
-  "extends": "next/core-web-vitals"
+  "ignorePatterns": ["node_modules/*"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "plugins": [
+    "react",
+    "prettier",
+    "react-hooks",
+    "simple-import-sort",
+    "import"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src"],
+        "root": ["./src"]
+      },
+      "alias": {
+        "extensions": [".ts", ".tsx"],
+        "map": [["@", "./src"]]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "endOfLine": "auto" }
+    ],
+    "max-len": ["error", { "code": 120 }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"]],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "no-use-before-define": "error",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-shadow": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "no-param-reassign": "off",
+    "react/button-has-type": "off",
+    "no-promise-executor-return": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-empty-function": "off",
+    "class-methods-use-this": "off",
+    "react/require-default-props": "off",
+    "no-explicit-any": "off",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/destructuring-assignment": "off",
+    "no-unused-vars": "error",
+    "import/no-unresolved": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-unescaped-entities": "off"
+  }
 }

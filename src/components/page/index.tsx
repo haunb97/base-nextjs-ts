@@ -1,50 +1,50 @@
 /* eslint-disable react/display-name */
-import { forwardRef } from "react";
+import { forwardRef } from 'react';
 
-import { Box } from "@mui/material";
-import { NextSeo } from "next-seo";
+import { Box } from '@mui/material';
+import { NextSeo } from 'next-seo';
 
 const Page = forwardRef(
   (
     {
       children,
-      title = "",
+      title = '',
       meta,
       metaDescription,
       ogImage = `${
-        typeof window !== "undefined" && window.location.origin
+        typeof window !== 'undefined' && window.location.origin
           ? window.location.origin
-          : ""
+          : ''
       }/images/thumbnail.png`,
       ogImageAlt = "t'order",
       ...other
     }: any,
-    ref
+    ref,
   ) => (
     <>
       <NextSeo
         title={title}
-        themeColor={"black"}
+        themeColor="black"
         description={metaDescription}
         canonical={`${
-          typeof window !== "undefined" && window.location.origin
+          typeof window !== 'undefined' && window.location.origin
             ? window.location.origin
-            : ""
+            : ''
         }${
-          typeof window !== "undefined" && window.location.pathname
+          typeof window !== 'undefined' && window.location.pathname
             ? window.location.pathname
-            : ""
+            : ''
         }`}
         openGraph={{
-          type: "website",
+          type: 'website',
           url: `${
-            typeof window !== "undefined" && window.location.origin
+            typeof window !== 'undefined' && window.location.origin
               ? window.location.origin
-              : ""
+              : ''
           }${
-            typeof window !== "undefined" && window.location.pathname
+            typeof window !== 'undefined' && window.location.pathname
               ? window.location.pathname
-              : ""
+              : ''
           }`,
           title,
           description: metaDescription,
@@ -54,7 +54,7 @@ const Page = forwardRef(
               alt: ogImageAlt,
             },
           ],
-          site_name: "CMC Cloud",
+          site_name: "t'order",
         }}
       />
 
@@ -62,7 +62,7 @@ const Page = forwardRef(
         {children}
       </Box>
     </>
-  )
+  ),
 );
 
 export default Page;
